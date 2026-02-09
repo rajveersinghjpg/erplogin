@@ -1,5 +1,4 @@
 const students = {
-
 "36852": {
     name: "ARCHIT KUMAR",
     father: "BRHAM PAL",
@@ -16,7 +15,24 @@ const students = {
     state: "UTTAR PRADESH",
     country: "INDIA",
 
-    photo: "images/archit.jpg"
+    photo: "images/archit.jpg",
+
+    qualification: [
+        {
+            exam: "HIGH SCHOOL",
+            year: "2013",
+            board: "UP BOARD",
+            marks: "64",
+            subjects: "HINDI, ENG, MATHS, SCIENCE"
+        },
+        {
+            exam: "ITI",
+            year: "2017",
+            board: "NCVT",
+            marks: "-",
+            subjects: "MACHINIST / GRINDER"
+        }
+    ]
 },
 
 "37652": {
@@ -35,8 +51,32 @@ const students = {
     state: "UTTAR PRADESH",
     country: "INDIA",
 
-    photo: "images/abhishek.jpg"
-},
+    photo: "images/abhishek.jpg",
+
+    qualification: [
+        {
+            exam: "10th",
+            year: "2012",
+            board: "Raj Board",
+            marks: "50",
+            subjects: "Hindi, English, Maths, Science"
+        },
+        {
+            exam: "12th",
+            year: "2015",
+            board: "UP BOARD",
+            marks: "51",
+            subjects: "Hindi, English, Maths"
+        },
+        {
+            exam: "Graduation",
+            year: "2019",
+            board: "SVSU Meerut",
+            marks: "67",
+            subjects: "Maths / Physics"
+        }
+    ]
+};
 
 "SRU220740087": {
     name: "RUPESH KUMAR SINGH",
@@ -56,5 +96,6 @@ const students = {
 
     photo: "images/rupesh.jpg"
 }
-
+]
+}
 };
