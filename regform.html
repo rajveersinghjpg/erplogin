@@ -164,6 +164,7 @@ body{
 <div class="section-title">Qualification Information</div>
 
 <table class="qual-table">
+<thead>
 <tr>
 <th>Examination</th>
 <th>Year</th>
@@ -171,20 +172,10 @@ body{
 <th>Marks(%)</th>
 <th>Subjects</th>
 </tr>
-<tr>
-<td>SECONDARY</td>
-<td>2013</td>
-<td>UP BOARD</td>
-<td>64</td>
-<td>HINDI, ENG, MATHS, SCIENCE</td>
-</tr>
-<tr>
-<td>SR. SECONDARY</td>
-<td>2015</td>
-<td>UP BOARD</td>
-<td>56</td>
-<td>GEN HINDI, ENG, MATHS, PHYSICS</td>
-</tr>
+</thead>
+
+<tbody id="qualification-body">
+</tbody>
 </table>
 
 <div class="section-title">DECLARATION</div>
@@ -221,22 +212,33 @@ if(students[id]){
 
     document.getElementById("name").innerText = s.name;
     document.getElementById("father").innerText = s.father;
-    document.getElementById("mother").innerText = s.mother;
-    document.getElementById("session").innerText = s.session;
-    document.getElementById("course").innerText = s.course;
-    document.getElementById("stream").innerText = s.stream;
-    document.getElementById("category").innerText = s.category;
-    document.getElementById("gender").innerText = s.gender;
-    document.getElementById("year").innerText = s.year;
-    document.getElementById("address").innerText = s.address;
-    document.getElementById("district").innerText = s.district;
-    document.getElementById("state").innerText = s.state;
-    document.getElementById("country").innerText = s.country;
     document.getElementById("photo").src = s.photo;
+
+    // ✅ Qualification Auto Fill
+    let qualBody = document.getElementById("qualification-body");
+
+    if(s.qualification){
+        s.qualification.forEach(q => {
+
+            let row = `
+                <tr>
+                    <td>${q.exam}</td>
+                    <td>${q.year}</td>
+                    <td>${q.board}</td>
+                    <td>${q.marks}</td>
+                    <td>${q.subjects}</td>
+                </tr>
+            `;
+
+            qualBody.innerHTML += row;
+        });
+    }
 }
 </script>
 
+
 </body>
 </html>
+
 
 
